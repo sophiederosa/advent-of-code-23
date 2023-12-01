@@ -15,9 +15,10 @@ func main() {
 	}
 
 	s := bufio.NewScanner(f)
+	re := regexp.MustCompile("[0-9]")
+	
 	sum := 0
 	for s.Scan() {
-		re := regexp.MustCompile("[0-9]")
 		allDigits := re.FindAllString(s.Text(), -1)
 
 		firstDigit := allDigits[0]
